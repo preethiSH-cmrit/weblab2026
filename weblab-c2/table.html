@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class Timetable - 5C</title>
+        <style>
+            table {
+                border: solid 1px grey;
+                border-collapse:collapse;
+                width:98%;
+                margin:auto;
+                table-layout: fixed;
+            }
+            thead th {
+                border-bottom:solid 4px #b8b8b8;
+                background-color: #f6cf71;
+            }
+            caption{
+                border-top: solid 4px #333b08;
+            }
+            caption, tfoot {
+                background-color: #c9db74;
+                padding: 10px;
+            }
+            tr {
+                background-color: #dcb0f2;
+                
+            }
+            th {
+                background-color: #f6cf71;
+                border:solid 1px grey;
+                border-right:solid 4px #b8b8b8;
+            }
+            td {
+                border: solid 1px grey;
+                text-align: center;
+                padding: 5px;
+            }
+            .core-elective {
+                background-color: #66c5cc;
+            }
+            .break {
+             
+                background-image: url('images/tc.jpeg'); 
+                background-repeat: no-repeat;
+                background-size: 50%;
+                background-position: 50% 30%;
+            }
+            td:hover {
+                opacity:70%;
+                border-width:2px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>Department of Computer
+                Science Engineering
+            </caption>
+            <thead>
+            <tr>
+                <th>Day</th>
+                <th>8.00 a.m.- 9.00 a.m.</th><th>9.00 a.m. - 10.00 a.m.</th>
+                <th>10.00 a.m.- 10.20 a.m.</th><th>10.20 a.m. - 11.20 a.m.</th>
+                <th>11.20 a.m.- 12.20 p.m.</th><th>12.20 p.m.- 1.00 p.m.</th>
+                <th>1.00 p.m.- 2.00 p.m.</th><th>2.00 p.m.- 3.00 p.m.</th>
+                <th>03.00 p.m.- 04.00 p.m.</th>
+            </tr>
+            </thead>
+            <tr>
+                <th>Monday</th>
+                <td>RMIPR</td><td class="core-elective">AI</td>
+                <!--teabreak-->
+                <td rowspan="6" class="break">Tea Break</td>
+                <td class="tyl">TYL Aptitute</td><td>SEPM</td>
+                <!--lunch break-->
+                <td rowspan="6" class="lunch">Lunch Break</td>
+                <td class="ptr">PTR</td>
+                <td colspan="2" class="lab">5C1:CN lab<br>
+                                5C2: No lab<br>
+                                5C3: Web lab</td>
+            </tr>
+            <tr>
+                <th>Tuesday</th>
+                <td colspan="2" class="lab">C1:Web lab<br>
+                                5C2: CN lab<br>
+                                5C3: No lab</td>
+                <!--teabreak-->
+                <td>CN</td><td>TOC</td>
+                <!--lunch break-->
+                <td class="tyl">Technical Training</td>
+                <td class="ptr">PTR</td><td class="core-elective">AI</td>
+            </tr>
+            <tr>
+                <th>Wednesday</th>
+            </tr>
+            <tr>
+                <th>Thursday</th>
+            </tr>
+            <tr>
+                <th>Friday</th>
+            </tr>
+            <tr>
+                <th>Saturday</th>
+            </tr>
+            <tfoot>
+            <tr><td colspan = 10>Name | USN</td></tr>
+            </tfoot>
+        
+        </table>
+
+    </body>
+
+</html>

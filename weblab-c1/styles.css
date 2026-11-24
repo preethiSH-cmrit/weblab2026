@@ -1,0 +1,95 @@
+body {
+    background-color: #ccffcc;
+}
+/*
+font-family - serif, sans serif
+font-size - pt, px, em
+*/
+h1 {
+    letter-spacing: 5px;
+}
+h1, h2 {
+    font-family:Arial;
+    
+}
+p{
+font-family:Georgia;
+
+}
+h2{
+    letter-spacing: 4px;
+}
+h3 {
+    font-family:Impact;
+letter-spacing: 3px
+}
+.section-div {
+    padding:20px;
+    margin: 5px;
+    text-align: justify;
+    background-color: cornsilk;
+    border-width: 0 0 0 5px;
+    border-style:solid;
+    border-color:brown;
+    border-radius:15px;
+}
+#contenthr{
+    width: 60%;
+    margin-top:30px;
+    border-style: ridge;
+    border-width: 5px;
+
+}
+.sectionhr{
+    width:80%;
+    border-style:dashed;
+}
+span{
+    font-weight: 400;
+    font-style: oblique;
+    background-color: burlywood;
+
+}
+time{
+    font-family:monospace;
+    
+}
+/* pseudo class selectors */
+#nav a {
+    padding:8px;
+    border: 1px solid grey;
+    border-width:2px 5px 2px 5px;
+    border-radius: 5px;
+    
+}
+#nav a:link{
+    background-color:cadetblue;
+    text-decoration: none;
+
+}
+#nav a:hover{
+    background-color:aqua;
+
+}
+#nav a:visited{
+    background-color: plum;
+
+}
+a:active{
+    background-color: burlywood;
+
+}
+#gallery{
+    display:flex;
+    gap:5px;
+}
+#gallery img{
+    flex: 1;
+    width:130px;
+    border: 1px solid sandybrown;
+    border-radius: 20px;
+}
+#gallery img:hover{
+    opacity:80%;
+    border: 2px solid saddlebrown;
+}

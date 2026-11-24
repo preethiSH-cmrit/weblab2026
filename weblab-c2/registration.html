@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+        <style>
+            form {
+                background-color: bisque;
+                width:80%;
+                margin:auto;
+                color:#5095EC
+            }
+            label {
+                padding: 10px;
+                margin: 5px;
+                font-size: 16px;
+                color:#5095EC;
+
+            }
+            input[type=text]{
+                border:groove 3px #7470CC;
+            }
+            option {
+                border:solid 1px brown;
+                background-color: bisque;
+                padding: 5px;
+            }
+            input {
+                padding:10px;
+                margin: 5px;
+                border: solid 1px burlywood;
+                border-radius: 10px;
+                color:#7470CC;
+
+            }
+            input[type=checkbox] {
+                    width: 20px;
+                    padding:10px;
+                    border:solid 2px brown;
+            }
+            input:focus{
+
+            }
+            input[type=submit], input[type=reset] 
+            {
+                
+                border: solid 2px brown;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>Tour Registration</h1>
+        <form method="post" action="" enctype="multipart/form-data">
+            <table>
+               
+                <tr>
+                    <th><label for="user">Name</label></th>
+                    <td><input type="text" id="user" name="user"></td>
+                </tr>
+                <tr>
+                    <th><label for="phone">Phone</label></th>
+                    <td><input type="tel" id="phone" name="phone"></td>
+                </tr>
+                <tr>
+                    <th><label for="email">Email</label></th>
+                    <td><input type="email" id="email" name="email"></td>
+                </tr>
+                <tr>
+                    <th><label for="aadhar"> aadhar</label></th>
+                    <td><input type="file" name="aadhar" id="aadhar"</td>
+                </tr>
+          <tr><td colspan="2">
+            <fieldset>
+                <legend>Package Details</legend>
+                <label for="package">Select Package</label>
+                <select name="package" id="package">
+                    <option></option>
+                    <option>Regular</option>
+                    <option>Gold</option>
+                    <option>Platinum</option>
+                </select>
+                <br>
+                <label for="from">From</label>
+                <input type="date" id="from" name="from"> <br>
+              
+                <label for="to">To</label>
+                <input type="date" name="to" id="to"> <br>
+
+                <label for="members">Number of members</label>
+                <input type="number" id="members" name="members"> <br>
+
+                <label>Select items to be included</label>
+                Food<input type="checkbox" name="addon">
+                Sight seeing<input type="checkbox" name="addon">
+                Trekking <input type="checkbox" name="addon">
+                Stay <input type="checkbox" name="addon">
+
+                <br>
+                <label>Tour guide required?</label>
+                YES<input type="radio" name="guide">
+                NO<input type="radio" name="guide">
+                <br>
+
+            </fieldset>
+            </td></tr>
+            <tr>
+                <th><label for="remarks">Remarks</label></th>
+                <td><textarea rows=5 id="remarks" name="remarks">
+
+                </textarea></td>
+            </tr>
+            <tr>
+               <td colspan="2">
+                <input type="submit" name="submit">
+                <input type="reset">
+               </td> 
+            </tr>
+            </table>
+
+        </form>
+
+        <div id="footer"> USN | Name</div>
+    </body>
+</html>

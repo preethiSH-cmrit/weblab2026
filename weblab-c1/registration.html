@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event Registration(Culturals)</title>
+        <style>
+            body {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color:#011f4b
+            }
+            form {
+                width:70%;
+                margin:auto;
+                background-color: 	#b3cde0;
+            }
+            table{
+                width: 100%;
+            }
+            label {
+                color:#03396c;
+                padding:15px;
+                margin:15px;
+                
+            }
+            th{
+                text-align: center;
+            }
+            input[type=submit], input[type=reset] {
+               border:2px 	#6497b1 solid;
+               border-radius:10px;
+               background-color: #03396c;
+               color:#b3cde0;
+               padding:5px;
+               text-transform: uppercase;
+            }
+            input,select,textarea {
+                border:1px 	#6497b1 solid;
+                width:150px;
+                padding:5px;
+                margin: 5px;
+            }
+            input:focus, textarea:focus {
+                background-color: #f9f3c7;
+            }
+            .required {
+                color: red;
+                font-size:15px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+    <h1>Registration form (Culturals)</h1>
+    <form method="get" action="">
+        <!--
+        <form method='post' enctype='multipart/form-data'>-->
+        <table>
+        <tr><th colspan="2">Personal Details</th></tr>
+        <tr>
+        <th>
+            <label for="fname">Name</label>
+        </th>
+        <td>
+            <input type="text" name="fullName" id="fname" required>
+            <span class="required">*</span>
+        </td>
+        </tr>
+
+        <tr>
+        <th>
+            <label for="fusn">USN</label>
+        </th>
+        <td>
+            <input type="text" name="usn" id="fusn" 
+            pattern="^1[A-Z][A-Z][1-9][1-9][A-Z][A-Z]\d{3}$"
+            placeholder="eg. 1CR26CS001" required>
+            <span class="required">*</span>
+        </td>
+        </tr>
+
+        <tr>
+        <th>
+            <label for="femail">Email</label>
+        </th>
+        <td>
+            <input type="email" name="email" id="femail" required>
+            <span class="required">*</span>
+        </td>
+        </tr>
+
+        <tr>
+        <th>
+            <label for="fcontact">Contact</label>
+        </th>
+        <td>
+            <input type="tel" name="contact" id="fcontact" required>
+            <span class="required">*</span>
+        </td>
+        </tr>
+
+        <tr>
+        <th>
+            <label for="furl">Site link</label>
+        </th>
+        <td>
+            <input type="url" name="url" id="furl" required>
+            <span class="required">*</span>
+        </td>
+        </tr>
+        <tr>
+        <th>
+            <label for="fcollege">College</label>
+        </th>
+        <td>
+            <select name="college" id="fcollege">
+                <optgroup label="Banglore">
+                    <option>CMRIT</option>
+                    <option>BMSCE</option>
+                    <option>NHCE</option>
+                    <option>RV</option>
+                </optgroup>
+                <optgroup label="Mysore">
+                    <option>SJCE</option>
+                    <option>BIT</option>
+                    <option>AHCE</option>
+                </optgroup>
+
+            </select>
+            <span class="required">*</span>
+        </td>
+        </tr>
+
+        <tr>
+        <th>
+            <label for="fbday">Birthday</label>
+        </th>
+        <td>
+            <input type="date" name="bday" id="fbday" required>
+            <span class="required">*</span>
+        </td>
+        </tr>
+
+        <tr><th colspan="2">
+            Event details
+        </th></tr>
+        <tr>
+        <th>
+            <label>Events</label>
+        </th>
+<td>
+    <fieldset>
+        <legend>Events participation<span class="required">*</span></legend>
+    
+<input type="checkbox" name="events" value="photography">
+photography
+<input type="checkbox" name="events" value="dance">
+dance
+<input type="checkbox" name="events" value="singing">
+Singing
+    
+    </fieldset>
+</td>
+        </tr>
+         <tr>
+        <th>
+            <label>Participation Type</label>
+        </th>
+        <td>
+        
+            <input type="radio" name="team" value="individual">individual
+            <input type="radio" name="team" value="team"> Team
+           
+        </td>
+        </tr>
+
+         <tr>
+        <th>
+            <label for="fsize">Team size</label>
+        </th>
+        <td>
+            <input type="number" min="2" max="10" name="size" id="fsize">
+        </td>
+        </tr>
+         <tr>
+        <th>
+            <label for="fremarks">Remarks</label>
+        </th>
+        <td>
+            <textarea name="remarks" id="fremarks" rows="3"></textarea>
+        </td>
+        </tr>
+         <tr>
+        <th>
+            <label for="fpayment">Upload payment receipt</label>
+        </th>
+        <td>
+            <input type="file" name="payment" id="fpayment">
+        </td>
+        </tr>
+         <tr>
+        <th>
+            <label for="fconf">Confidence to win</label>
+        </th>
+        <td>
+            Hopeful<input type="range" min=1 max=10 name="conf" id="fconf">
+            Very Confident
+        </td>
+        </tr>
+        
+        
+
+        <tr>
+            <th colspan="2">
+                <input type="submit" name="submit">
+                 <input type="reset">
+            </th>
+        </tr>
+        </table>
+    </form>
+</body>
+</html>

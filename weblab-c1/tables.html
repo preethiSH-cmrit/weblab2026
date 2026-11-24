@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class Timetable</title>
+        <style>
+            body {
+                font-family:Verdana;
+                font-size: 16px;
+                color:#333;
+            }
+            table {
+                border:1px solid #888;
+                width: 98%;
+                margin:auto;
+                border-collapse:collapse;
+                table-layout: fixed;
+            }
+            caption {
+                margin-bottom: 10px;
+                text-transform: uppercase;
+                background-color: #d7adbe;
+                border-bottom:5px ridge #242d62;
+                padding:10px;
+            }
+            tfoot td {
+                text-align: center;
+                border-bottom: 5px ridge #242d62;
+                background-color: #d7adbe;
+                padding: 20px;
+                
+
+            }
+            thead td{
+
+            }
+            th {
+
+            }
+            tbody tr:nth-child(1){
+                background-color: aliceblue;
+            }
+            td:hover {
+                opacity: 60%;
+                border-color: #333;
+            }
+            th,td {
+                 border:2px solid #888;
+                 padding:4px;
+                 font-size:0.9em;
+                 text-align: center;
+            }
+            .lab {
+                background-color: #adb7dc;
+            }
+            .tyl {
+                background-color: #c56477;
+            }
+            .mp {
+                background-color: #6886af;
+            }
+            .tbreak {
+                background-color: #b6c6db;
+                background-image: url('images/tea-cup.png');
+                background-size: 50%;
+                background-repeat: no-repeat;
+                background-position: 50% 10%;
+            }
+            .lbreak {
+                background-color: #b6c6db;
+            }
+
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>Department of Computer Science and Engineering</caption>
+            <thead>
+                <tr>
+                    <th>Day/Time</th>
+                    <th>8.00 a.m. to 9.00 a.m.</th>
+                    <th>9.00 a.m. to 10.00 a.m.</th>
+                    <th>10.00 a.m. to 10.20 a.m.</th>
+                    <th>10.20 a.m. to 11.20 a.m.</th>
+                    <th>11.20 a.m. to 12.20 p.m.</th>
+                    <th>12.20 p.m. to 1.00 p.m.</th>
+                    <th>1.00 p.m. to 2.00 p.m.</th>
+                    <th>2.00 p.m. to 3.00 p.m.</th>
+                    <th>3.00 p.m. to 4.00 p.m.</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Monday</th>
+                    <td>DS</td><td>OOPS</td>
+                    <td rowspan="6" class="tbreak">Tea Break</td>
+                    <td>DDCO</td> <td>PDS</td>
+                     <td rowspan="6" class="lbreak">Lunch Break</td>
+                     <td colspan="2" class="lab">3A1:DS, 3A2:OOPS,
+                        3A3:PMG
+                     </td>
+                     <td class="mp">Mini project</td>
+                </tr>
+                <tr><!--8 columns-->
+                    <th>Tuesday</th>
+                    <td colspan="2">3A1:PMG, 3A2:DS,
+                        3A3:OOPS
+                     </td>
+                     <td>DDCO</td><td>DS</td>
+                     <td class="tyl">TYL Aptitude A2</td>
+                     <td>PDS</td><td>CP</td>
+
+                </tr>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="10"> USN  | Name </td>
+                </tr>
+
+            </tfoot>
+
+        </table>
+    </body>
+</html>

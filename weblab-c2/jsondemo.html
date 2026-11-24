@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON demo</title>
+        <style>
+            .result {
+                border:1px orangered solid;
+                width:300px;
+                height:150px;
+                margin:10px;  
+                padding: 15px  
+            }
+            h3 {margin:2px;}
+            button { border:1px orangered solid;
+            width:90px; height:40px; text-transform: uppercase;
+            color:darkolivegreen}
+        </style>
+    </head>
+    <body>
+        <h1>JSON in Javascript Demo</h1>
+        <h2>JSON text to Javascript object</h2>
+<div id="jsontxt" style="color:#888; background-color: #eee;">
+    
+    {"course":{"code":"BCS503","cname":"TOC",
+    "credits":4,"startdate":"2026-08-26"}}
+        </div>
+        <div id="jsa" class="result">
+            
+        </div>
+        <button onclick="convertjs()">Convert</button>
+        <script>
+            function convertjs(){
+               var txt = jsontxt.textContent
+               console.log(txt)
+               var obj = JSON.parse(txt)
+               console.log(obj)
+
+               result ="<h3> Course Name </h3>"+
+                        obj.course.cname;
+               result += "<h3> Course Code</h3>"+
+                        obj.course.code;
+                result +="<h3> Course Credits </h3>"+
+                        obj.course.credits;
+            
+               jsa.innerHTML=result
+
+            }
+        </script>
+        <h2>JSON results to Javascript date</h2>
+        <div id="jsdate" class="result"></div>
+        <button onclick="convertdate()">Convert</button>
+           
+        <script>
+            function convertdate() {
+            var txt = jsontxt.textContent
+            var obj = JSON.parse(txt)
+            var datetxt = obj.course.startdate;
+            console.log(datetxt)
+            var dateObj = new Date(datetxt)
+            var result ="<h3>"+dateObj+"</h3>"
+
+            options= {
+                "year":"numeric",
+                "month":"short",
+                "day":"2-digit"
+            }
+
+            result+="<br><h3>"+
+    dateObj.toLocaleString("en-US",options)+"</h3>"
+            jsdate.innerHTML=result
+
+            }
+            
+        </script>
+        <h2>JSON to csv, csv to JSON</h2>
+        <div id="csv" style="color:#888; background-color: #eee;">
+            [{"code":"BCS501","cname":"SEPM"},
+              {"code":"BCS502","cname":"CN"},
+              {"code":BCS503","cname":"TOC"}]
+        </div>
+        <div id="jscsv" class="result">
+            
+        </div>
+        <button onclick="convertcsv()">toCSV</button>
+        <script>
+            function convertcsv(){
+                var json = 
+            [{"code":"BCS501","cname":"SEPM"},
+              {"code":"BCS502","cname":"CN"},
+              {"code":"BCS503","cname":"TOC"}]
+            jscsv.textContent = json
+                let csv=''
+                headers = Object.keys(json[0])
+                console.log(headers.join())
+
+                csv += headers.join()+"\n";
+
+                //values
+                for(var i=0; i<json.length; i++){
+                    //obtain each row
+                   console.log(Object.values(json[i]))
+                   record = Object.values(json[i])
+                    //join
+                   recordcsv = record.join()
+                    //append to csv
+                    csv+=recordcsv+"\n"
+                }
+                jscsv.textContent = csv
+
+            }
+
+        </script>
+     
+
+
+       
+    </body>
+</html>

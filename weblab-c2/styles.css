@@ -1,0 +1,83 @@
+body{
+    background-color: #ccffcc;
+}
+h1,h2,h3{
+    color:#338833;
+
+}
+h1{
+    font-family: 'Franklin Gothic Medium';
+    letter-spacing: 10px;
+}
+p{
+    font-family:Georgia;
+    font-size:14px;
+    background-color: #338833;
+}
+.blogpost {
+    background-color: cornsilk;
+    font-style: oblique;
+    padding: 10px;
+    margin:5px;
+    margin-top:10px;
+    text-align:justify;
+    border-style:solid;
+    border-width:1px 1px 1px 5px;
+    border-color:darkolivegreen;
+    border-radius:15px;
+}
+p{
+
+}
+hr {
+    border:groove 2px darkgreen;
+}
+.divide-section{
+    border:dashed 2px darkgrey;
+    width:80%;
+}
+span{
+    background-color: lightyellow;
+    font-weight: 300;
+    font-style:italic;
+    font-size:1.2em;
+    padding: 5px;
+
+}
+time{
+    font-family: Courier;
+    background-color: mediumspringgreen;
+
+}
+#nav a:link{
+    text-decoration: none;
+    background-color:bisque;
+    padding:10px;
+    color:brown;
+    border:solid 1px brown;
+}
+#nav a:visited{
+    background-color: violet;
+
+}
+#nav a:hover{
+    background-color: aquamarine;
+
+}
+
+#nav a:active{
+    background-color: cadetblue;
+
+}
+#gallery {
+    display:flex;
+    gap:5px;
+}
+#gallery img {
+    flex:1;
+    width:150px;
+    border: inset 1px brown;
+}
+#gallery img:hover {
+    opacity: 80%;
+}

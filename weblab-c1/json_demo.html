@@ -1,0 +1,28 @@
+ <h2>Create hash</h2>
+        <input id="ip">
+        <br>
+        <div class="op" id="hashdiv"></div>
+        <button onclick="sha1()">Create hash</button>
+        <script>
+
+            async function sha1() {
+                 var txt = ip.value;
+                // 1. Encode the string as UTF-8 bytes
+                const encoder = new TextEncoder();
+                const data = encoder.encode(txt);
+
+                // 2. Generate the SHA-1 hash (returns an ArrayBuffer)
+                const hashBuffer = await crypto.subtle.digest("SHA-1", data);
+
+                // 3. Convert the ArrayBuffer to a 40-character hex string
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray
+                    .map((byte) => byte.toString(16).padStart(2, "0"))
+                    .join("");
+                hashdiv.textContent = data
+
+            }
+
+            
+        </script>
+    

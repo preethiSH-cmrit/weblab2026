@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Revision - JS</title>
+    </head>
+    <body>
+        <div id="desc"></div>
+        <div id="concept"></div>
+        <h2 id="greeting">ff</h2>
+        <div id="loop"></div>
+
+        <h3>
+        <input type="text" id="v1">
+        <input type="text" id="v2">
+        <input type="answer" id="answer">
+        <button onclick="calculate()">Calculate</button>
+        </h3>
+        <script>
+//Conditions
+let hour=15
+if (hour<12)
+        greeting.textContent = "Good Morning"
+else
+        greeting.textContent = "Good Afternoon"
+
+//Loops
+for (let i=0; i<5; i++){
+    loop.innerHTML+="Welcome<br>"
+}
+
+//functions
+function calculate(){
+    let ans = Number(v1.value)+Number(v2.value)
+    console.log(ans)
+    answer.value = ans
+
+}
+//alert("JS-Revision")
+document.write("<h1>JS - Revision</h1>")
+document.getElementById('desc').innerHTML="<strong> \
+    JS concepts</strong>"
+//innerText
+
+//Debugging
+console.log("Log errors")
+
+//directly access HTML or text
+concept.innerHTML = "<b>testing<b>"
+concept.textContent += " 123"
+
+
+//var, let, const
+
+var a="foo"
+var a= 38886
+console.log(a)
+
+//does not allow reclaration in the same scope
+let b="foo"
+b="bar"
+//let b=3886
+console.log(b)
+
+const c=3.14
+//reassignment of constants are not allowed
+//c=3.1
+console.log(c)
+
+        </script>
+    </body>
+</html>
