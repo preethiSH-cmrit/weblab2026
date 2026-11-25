@@ -78,7 +78,8 @@
               {"code":"BCS502","cname":"CN"},
               {"code":BCS503","cname":"TOC"}]
         </div>
-        <div id="jscsv" class="result">
+        <div id="jscsv" style= "white-space: pre-line;"
+        class="result">
             
         </div>
         <button onclick="convertcsv()">toCSV</button>
@@ -110,7 +111,71 @@
             }
 
         </script>
-     
+        <h2> CSV to JSON</h2>
+        <div id="csvdata" style="white-space: pre-line;
+        background-color: #ccc; padding:5px"></div>
+        <div id="jsonOutput" class="result"></div>
+
+        <button onclick="csv2json()">CSV to JSON</button>
+        <script>
+            function csv2json(){
+            var csv_data = "code,cname \n BCS501,SEPM \n \
+            BCS502,CN \n BCS503,TOC"
+                csvdata.textContent = csv_data
+            
+            //convert to json
+            
+            var data = csv_data.split("\n")
+            //headers
+            var headers = data[0].split(",")
+            //console.log(headers)
+            jsonfromcsv=[]
+            //obtain values
+            for(var i=1;i<data.length; i++){
+                var record = data[i].split(",")
+                var obj={}
+                for (var j=0; j<record.length; j++){
+                    var key = headers[j]
+                    var value = record[j]
+                    obj[key]=value
+                }
+                console.log(obj)
+                jsonfromcsv.push(obj)    
+                //console.log(jsonfromcsv)    
+            }
+        
+    jsonOutput.textContent=JSON.stringify(jsonfromcsv)
+
+            }
+        </script>
+
+         <h2>Create hash</h2>
+        <input id="ip">
+        <br>
+        <div class="result" id="hashdiv"></div>
+        <button onclick="createhash()">Create hash</button>
+        <script>
+            //web crypto API
+    async function createhash() {
+        message = ip.value
+// 1. Encode the string as UTF-8 bytes
+const encoder = new TextEncoder();
+const data = encoder.encode(message);
+
+// 2. Generate the SHA-1 hash (returns an ArrayBuffer)
+const hashBuffer = await crypto.subtle.digest("SHA-1", data);
+
+// 3. Convert the ArrayBuffer to a 40-character hex string
+const hashArray = Array.from(new Uint8Array(hashBuffer));
+console.log(hashArray)
+const hashHex = hashArray
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("");
+
+hashdiv.textContent = hashHex
+    }
+        </script>
+    
 
 
        
