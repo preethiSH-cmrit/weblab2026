@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON demo</title>
+        <style>
+            .data {background-color: #ccc;
+                   padding:5px;}
+            .op {border:1px solid #888;
+                 width:250px; height:200px;
+                 padding:5px;margin:5px;
+                 white-space: pre-line;}
+            button {
+                border:1px solid black;
+                padding:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>JSON demo</h1>
+        <h2>JSON text to JS object</h2>
+        <div class="data" id="jsonData">
+    {"student":{"sname":"ajay","usn":"1CR23CS003","dept":"CSE","dob":"2002-11-12"} }
+        </div>
+        <div class="op" id="jsOp"></div>
+        <button onclick="convertjs()">
+            Convert to JS
+        </button>
+        <script>
+            function convertjs(){
+                var txt = jsonData.textContent
+                console.log(txt)
+                var obj = JSON.parse(txt)
+                console.log(obj)
+                var sname = obj.student.sname
+                var usn = obj.student.usn
+                var dept = obj.student.dept
+                
+                //display in jsOp
+                // = set
+                // + concatenate
+                // += append
+                
+        jsOp.innerHTML = "<b>Student Name:</b> "+sname
+        jsOp.innerHTML  += "<br><b>Student USN:</b> "+usn
+        jsOp.innerHTML  += "<br><b>Department:</b> "+dept
+            }
+        </script>
+        <h2>Parse JSON date</h2>
+        <div class="op" id="jsDate"></div>
+        <button onclick="convertDate()">
+            Convert to Date
+        </button>
+        <script>
+        function convertDate() {
+            var txt = jsonData.textContent
+            var obj = JSON.parse(txt)
+            var dob = obj.student.dob
+            var dobObj = new Date(dob)
+
+            console.log(dobObj)
+            var options ={"day":"2-digit","month":"long",
+                            "year":"numeric" }
+            
+            var fdate = dobObj.toLocaleString("en-US",options)
+            jsDate.innerHTML="<em>"+fdate+ "</em>"
+        }
+    
+            
+        </script>
+        <h2>JSON to CSV</h2>
+        <div class="data" id="csvdata"></div>
+        <div class="op" id="divcsv"></div>
+        <button onclick="convertcsv()">Convert to CSV</button>
+        <script>
+            function convertcsv(){
+                var jsonArr = [
+                {"usn":"1CR23CS001","sname":"Asha"},
+                {"usn":"1CR23CS053","sname":"Caleb"},
+                {"usn":"1CR23CS153","sname":"Mithun"}
+                ]
+                //strigify - converts JSON object to string
+                csvdata.textContent=JSON.stringify(jsonArr)
+
+                var csv=''
+                //headers - obtain from any row
+                var headers = Object.keys(jsonArr[0])
+                console.log(headers)
+                //add to csv, add new line at the end
+                csv = headers.join() + "\n"
+                for(var i=0; i<jsonArr.length;i++){
+                    var record = Object.values(jsonArr[i])
+                    csv += record.join()+ "\n"
+                }
+                divcsv.textContent = csv
+            
+            }
+        </script>
+        <h2>CSV to JSON</h2>
+        <div class="data" style="white-space: pre-line;"
+         id="csv_data"></div>
+        <div class="op" id="divconvjson"></div>
+        <button onclick="convertcsv()">Convert to JSON</button>
+        <script>
+            function convertcsv() {
+                var csv = "sname, usn \n Jane, 1CR25CS003 \n \
+                Ajay, 1CR25CS006 \n Karthik 1CR25CS008"; 
+                            
+                csv_data.textContent=csv 
+                //split every line - first headers
+                data =  csv.split("\n")     
+                headers = data[0].split(",")
+                console.log(headers)
+                jsonData=[]
+                //values
+                for(var i=1;i<data.length;i++){
+                    var record=data[i].split(",")
+                    var obj ={}
+                    for(var j=0; j<record.length;j++){
+                        var key =headers[j]
+                        var value = record[j]
+                        obj[key] = value
+                    }
+                    jsonData.push(obj)
+                    console.log(jsonData)
+                    //check and display
+                    divconvjson.textContent = 
+                    JSON.stringify(jsonData)
+                }
+
+            }
+        
+            
+        </script>
+        <h2>Create hash</h2>
+        <input id="ip">
+        <br>
+        <div class="op" id="hashdiv"></div>
+        <button onclick="createhash()">Create hash</button>
+        <script>
+
+            async function sha1(message) {
+                // 1. Encode the string as UTF-8 bytes
+                const encoder = new TextEncoder();
+                const data = encoder.encode(message);
+
+                // 2. Generate the SHA-1 hash (returns an ArrayBuffer)
+                const hashBuffer = await crypto.subtle.digest("SHA-1", data);
+
+                // 3. Convert the ArrayBuffer to a 40-character hex string
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray
+                    .map((byte) => byte.toString(16).padStart(2, "0"))
+                    .join("");
+
+  return hashHex;
+}
+
+            function createhash(){
+                var txt = ip.value;
+              
+                sha1(txt).then((hash) => hashdiv.textContent = hash);
+            }
+        </script>
+    
+    
+    </body>
+</html>

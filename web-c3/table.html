@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Timetable</title>
+        <style>
+            table {
+                border:solid 1px grey;
+                border-collapse: collapse;
+                width:97%;
+                margin:auto;
+                table-layout: fixed;
+            }
+            th,td {
+                border: solid 1px grey;
+                padding:5px;
+                text-align: center;
+            }
+            .elective {
+                background-color: #66c5cc;
+            }
+            .ptr{
+                background-color: #f6cf71;
+            }
+            .tyl {
+                background-color: #dcb0f2;
+
+            }
+            .lab {
+                background-color: #87c55f;
+
+            }
+            caption {
+                border-bottom: groove 5px #b3b3b3;
+                background:linear-gradient(white,#f6cf71);
+                padding:10px;
+            }
+            thead tr { background-color: #3a86ff;
+            color:white
+            }
+            tbody th {
+                background-color: #06d6a0;
+                
+            }
+            /* Monday */
+           tbody tr:nth-child(1) {
+            background-color:#fe88b1;
+           }
+           /* Tuesday */
+           tbody tr:nth-child(2) {
+            background-color: #9eb9f3;
+           }
+           tr:hover {
+            opacity: 70%;
+        
+           }
+           tfoot th {
+
+           }
+           .break {
+            background-image: url(images/tc.jpeg);
+            background-size: 60%;
+            background-repeat: no-repeat;
+            background-position: 50% 25%;
+
+           }
+            
+
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>Department of CSE</caption>
+            <thead>
+                <tr><!--10 columns-->
+                    <th>Day/Time</th>
+                    <th>8.00 a.m. - 9.00 a.m.</th>
+                    <th>9.00 a.m. - 10.00 a.m.</th>
+                    <th>10.00 a.m. - 10.20 a.m.</th>
+                    <th>10.20 a.m. - 11.20 a.m.</th>
+                    <th>11.20 a.m. - 12.20 a.m.</th>
+                    <th>12.20 a.m. - 1.00 p.m.</th>
+                    <th>1.00 p.m. - 2.00 p.m.</th>
+                    <th>2.00 p.m. - 3.00 p.m.</th>
+                    <th>3.00 p.m. - 4.00 p.m.</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr> <!--row 1 in tbody-->
+                    <th>Monday</th>
+                    <td class="elective">OE</td> <td>Technical Training</td>
+                    <td rowspan="6"class="break">Tea Break</td><!--teabreak-->
+                    <td>CC</td><td>PE</td>
+                    <td rowspan="6" class="lunch">Lunch Break</td><!--lunch-->
+                    <td>ML</td><td class="tyl">TYL - soft skills</td>
+                    <td class="ptr">PTR</td>
+                </tr>
+                <tr><!--8 cols in remaining rows-->
+                    <th>Tuesday</th>
+                    <td class ="lab" colspan="2">A1 - ML Lab<br>
+                                    A2 - Cloud Lab <br>
+                                    A3 - no lab</td>
+                    <!--tea break-->
+                    <td class="tyl">TYL Aptitute</td>
+                    <td class="elective">OE</td>
+                    <!--lunch-->
+                    <td class="ptr">PTR</td><td>ML</td><td>CC</td>
+                </tr>
+                <!--remaining days-->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="10"> USN | Name</th>
+                </tr>
+
+            </tfoot>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hackathon Registration</title>
+        <style>
+            form {
+                background-color: cornsilk;
+                border-left: 5px solid brown;
+                border-radius: 10px;
+                padding: 10px;
+                width: 90%;
+                margin:auto;
+                background:linear-gradient(#fff,cornsilk);
+            }
+            h1 {
+
+            }
+            body{
+                color:#333;
+                font-family:Cambria
+            }
+            label {
+                font-family: Cambria;
+                font-size:16px;
+                font-style: italic;
+                color:#333;
+                font-weight: bold;
+                
+            }
+            input {
+                width:200px;
+                height:30px;
+                border:2px solid darkred;
+                border-radius:5px;
+                font-size:16px;
+                font-family: Cambria;
+            }
+            textarea {
+                background-color: lightcyan;
+                border:2px solid darkred;
+                border-radius:5px;
+            }
+            td {
+                padding:10px;
+                
+            }
+            input[type=checkbox] {
+                border-color: darkgoldenrod;
+
+            }
+            input[type=checkbox]:checked {
+                background-color: mistyrose;
+            }
+            select {
+                width: 200px;
+                height:30px;
+            }
+            input:focus, textarea:focus {
+                background-color: lightskyblue;
+            }
+           
+            input[type=submit], input[type=reset] {
+                margin-left:20px;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hackathon Registration</h1>
+        <form method="post" action="" enctype="multipart/form-data">
+            <table><!--for formatting-->
+                <tr>
+                    <td><label for="f-lead">Team Lead </label></td>
+                    <td><input type="text" id="f-lead" name="lead"></td>
+                </tr>
+                
+                <tr>
+                    <td><label for="f-dept">Department</label></td>
+                    <td><select id="f-dept" name="department">
+                        <option></option>
+                        <optgroup label="Computing">
+                        <option>CSE</option>
+                        <option>ISE</option>
+                        <option>AIDS</option>
+                        <option>AIML</option>
+                        </optgroup>
+                        <optgroup label="Electronics"
+                        <option>ECE</option>
+                        <option>IoT</option>
+                        <option>VLSI</option>
+                        </optgroup>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="f-members">Number of Members</label></td>
+                    <td><input type="number" id="f-members" name="members"></td>
+                </tr>
+                <tr>
+                    <td><label for="f-code">Secret code</label></td>
+                    <td><input type="password" id="f-code" name="code"></td>
+                </tr>
+                <!--email, link, mobile-->
+                 <tr>
+                    <td><label for="f-email">Email</label></td>
+                    <td><input type="email" id="f-email" name="email"></td>
+                </tr>
+                 <tr>
+                    <td><label for="f-mobile">Mobile</label></td>
+                    <td><input type="tel" id="f-mobile" name="mobile"></td>
+                </tr>
+                 <tr>
+                    <td><label for="f-url">Link to your profile page</label></td>
+                    <td><input type="url" id="f-url" name="url"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="f-domain">Select Domain</label></td>
+                    <td><fieldset>
+                    <legend>Domain</legend>
+              
+                        <input type="checkbox" name="domain">
+                        Artificial Intelligence<br>
+                        <input type="checkbox" name="domain">
+                        Machine Learning<br>
+                        <input type="checkbox" name="domain">
+                        Cybersecurity
+                    </fieldset>
+                    </td>
+                    </tr>
+                    <td><label>
+                    Has the idea been submitted elsewhere?
+                        </label></td>
+                    <td>Yes<input type="radio" name="idea">
+                    No <input type="radio" name="idea"></td>
+                    <tr>
+                        <td><label for="f-problem">
+                            Problem statement</label></td>
+                        <td><textarea id="f-problem" rows=3 name="problem">
+
+                        </textarea></td>
+                    </tr>
+                    <!--give spcialized controls - date,time
+                    difficulty range-->
+                    <tr>
+                        <td><label for="f-approval">Date(of internal approval)</label></td>
+                        <td><input type="date" name="approval" id="f-approval"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="f-pres">Presentation Time</label></td>
+                        <td><input type="time" name="pres" id="f-pres"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="f-difficulty">Difficulty Level</label></td>
+                        <td>Easy
+                            <input type="range" min="1" max="5" name="difficulty" id="f-difficulty">
+                            Difficult
+                        </td>
+                    </tr>
+                    <tr><!-- add enctype='multipart/form-data' to your form
+                        change method =post-->
+                        <td><label for="f-pic">Upload a photo</label></td>
+                        <td><input type="file" name="pic" id="f-pic"></td>
+                    </tr>
+                    <tr><td colspan="2">
+                        <input type="checkbox" name="accept" required>
+                        I agree to the terms and conditions
+                    </td></tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <input type="submit" name="submit">
+                            <input type="reset">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;" class="foot">USN | Name</td>
+                    </tr>
+            </table>
+        </form>
+    </body>
+</html>

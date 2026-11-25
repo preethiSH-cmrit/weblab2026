@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Calculator</title>
+        <style>
+            #calculator {
+                width: 200px;
+                margin: auto;
+                background-color: #eee;
+                padding:15px;
+            }
+            button {
+                background-color: whitesmoke;
+                border:1px solid #ccc;
+                width:30px;
+                height:30px;
+                padding:5px;
+                font-size:16px;
+                margin:5px;
+                border-radius: 10px;
+            }
+            button:hover {
+                background-color: lightgoldenrodyellow;
+            }
+            #expr{
+                border: 0px solid #333;
+                font-size:14px;
+                width:190px;
+                background-color: azure;
+                padding:5px;
+                text-align: right;
+            }
+            #answer{
+                font-weight: 200;
+                font-size:24px;
+                width:190px;
+                border: 0px solid #333;
+                padding:5px;
+                text-align: right;
+                background-color:white;
+                margin-bottom:10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>JS Calculator</h1>
+        
+
+        <div id="calculator">
+            <input type="text" disabled id="expr">
+            <br><br>
+            <input type="text" disabled id="answer">
+            <br>
+            <button onclick="expr.value='';
+            answer.value=''">AC</button>
+            <br>
+            <button onclick="calcsqroot()">&radic;x</button>
+            <button onclick="expr.value+='**2'">x<sup>2</sup></button>
+            <button onclick="expr.value+='%'">%</button>
+            <button onclick="expr.value+='**'">x<sup>y</sup></button>
+            <br>
+            <button onclick="expr.value+=7">7</button>
+            <button onclick="expr.value+=8">8</button>
+            <button onclick="expr.value+=9">9</button>
+            <button onclick="expr.value+='*'">*</button>
+            <br>
+            <button onclick="expr.value+=4">4</button>
+            <button onclick="expr.value+=5">5</button>
+            <button onclick="expr.value+=6">6</button>
+            <button onclick="expr.value+='-'">-</button>
+            <br>
+            <button onclick="expr.value+=1">1</button>
+            <button onclick="expr.value+=2">2</button>
+            <button onclick="expr.value+=3">3</button>
+            <button onclick="expr.value+='+'">+</button>
+                <br>
+            <button onclick="expr.value+='.'">.</button>
+            <button onclick="expr.value+=0">0</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="expr.value+='/'">/</button>
+
+            <script>
+                function calculate(){
+                    
+                    let result = eval(expr.value)
+                    console.log(result)
+                     answer.value=result
+                   
+                }
+                function calcsqroot(){
+                    let sqr = Math.sqrt(expr.value)
+                    answer.value=sqr
+                }
+                
+            </script>
+
+
+
+
+        </div>
+    </body>
+</html>
